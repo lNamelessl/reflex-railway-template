@@ -2,6 +2,13 @@
 
 encode gzip
 
+# The socket.io client connects to /_event without a trailing slash; the
+# backend (socketio_path="") only answers at /_event/ and would answer a
+# bare /_event with a 307 that websocket clients cannot follow. Rewrite
+# (not redirect) so the upgrade reaches the backend transparently.
+@event_exact path /_event
+rewrite @event_exact /_event/
+
 @backend_routes path /_event /_event/* /ping /_upload /_upload/*
 handle @backend_routes {
 	reverse_proxy localhost:8000
