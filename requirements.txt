@@ -1,0 +1,8 @@
+# Fully pinned — Reflex moves fast, and the frontend build must match the
+# backend version exactly. Bump deliberately, one version at a time.
+# The [db] extra pulls sqlmodel + alembic (needed for rx.Model tables and
+# `reflex db migrate`); versions below are the exact resolved pins.
+reflex[db]==0.9.11
+sqlmodel==0.0.42
+SQLAlchemy==2.0.52
+alembic==1.20.0

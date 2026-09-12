@@ -1,0 +1,14 @@
+.git
+.github
+.venv
+.web
+__pycache__
+*.py[cod]
+reflex.db
+.mimosa
+.zcode
+README.md
+TEMPLATE_OVERVIEW.md
+*.log
+.DS_Store
+Thumbs.db

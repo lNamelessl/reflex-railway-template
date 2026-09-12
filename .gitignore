@@ -1,0 +1,22 @@
+*.db
+.web
+.states
+assets/external/
+# Reflex build output (generated, never commit)
+.web/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# Local runtime artifacts
+reflex.db
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
