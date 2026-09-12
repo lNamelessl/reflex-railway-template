@@ -40,8 +40,14 @@ ARG PORT API_URL
 # The localhost API URL is intentional: the compiled frontend rewrites
 # localhost endpoints to the page's own origin (wss/https behind TLS), so the
 # browser reaches the backend through the same public origin.
+#
+# Keep .web minus node_modules/build: Reflex 0.9.x workers read
+# .web/backend/stateful_pages.json at startup; deleting all of .web forces
+# every worker to regenerate it concurrently, and workers that catch the file
+# mid-write (empty) crash with a JSONDecodeError.
 RUN REFLEX_API_URL=${API_URL:-http://localhost:$PORT} reflex export --frontend-only --no-zip \
-    && mv .web/build/client/* /srv/ && rm -rf .web
+    && mv .web/build/client/* /srv/ \
+    && rm -rf .web/node_modules .web/build
 
 # Final image with only necessary files
 FROM python:3.13-slim
