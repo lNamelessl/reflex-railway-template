@@ -58,6 +58,7 @@ None are required — the template is zero-config out of the box:
 
 ## Troubleshooting
 
+- **"Connection Error" icon flashes at startup** → on a fresh boot the first websocket attempt can race the backend's event processor; it clears by itself within seconds and reconnects. Only investigate if it persists.
 - **Build fails with memory/Killed errors** → you're on the Free plan (0.5 GB). Upgrade to Hobby, or trim frontend dependencies.
 - **App loads but events never fire** → the frontend can't reach the backend. Check the browser console for websocket errors to `/_event/*`; make sure you didn't set `api_url` in `rxconfig.py`.
 - **`reflex db migrate` fails at start** → your app has models but no `alembic/` directory; run `reflex db init` locally and commit it.

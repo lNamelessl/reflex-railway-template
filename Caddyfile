@@ -1,10 +1,5 @@
 :{$PORT}
 
-log {
-	output stdout
-	format console
-}
-
 encode gzip
 
 # The socket.io client connects to /_event without a trailing slash; the
