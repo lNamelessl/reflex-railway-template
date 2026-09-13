@@ -1,6 +1,6 @@
 # Reflex on Railway — pure-Python full-stack starter
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.app/new?github_url=https://github.com/OWNER/reflex-railway-template)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/reflex-railway-template)
 
 Deploy a production-mode [Reflex](https://reflex.dev) app — **full-stack web apps written entirely in Python** — to Railway in one click. No JavaScript to write, no Node server to babysit at runtime.
 
